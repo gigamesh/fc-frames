@@ -105,6 +105,7 @@ export async function verifyJsonFarcasterSignature(
   try {
     appKeyResult = await verifyAppKey(fid, appKey)
   } catch (error: unknown) {
+    console.error('unknown error!!', error)
     throw new VerifyAppKeyError(
       'Error verifying app key',
       error instanceof Error ? error : undefined,
